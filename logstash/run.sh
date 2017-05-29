@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+LOGSTASH_CONFIG=/tmp/logstash.conf
+
+
+: ${KAFKA_TOPIC:=test}
+: ${KAFKA_BOOTSTRAP_SERVERS:=kafka:9092}
+: ${ELASTIC_HOST:=es:9200}
+: ${ELASTIC_INDEX:=$KAFKA_TOPIC}
+
+sed -i ${LOGSTASH_CONFIG} -e "s/%KAFKA_TOPIC%/${KAFKA_TOPIC}/" 
+sed -i ${LOGSTASH_CONFIG} -e "s/%KAFKA_BOOTSTRAP_SERVERS%/${KAFKA_BOOTSTRAP_SERVERS}/"
+sed -i ${LOGSTASH_CONFIG} -e "s/%ELASTIC_HOST%/${ELASTIC_HOST}/"
+sed -i ${LOGSTASH_CONFIG} -e "s/%ELASTIC_INDEX%/${ELASTIC_INDEX}/"
+
+
+/usr/share/logstash/bin/logstash -f $LOGSTASH_CONFIG
