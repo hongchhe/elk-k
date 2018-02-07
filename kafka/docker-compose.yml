@@ -1,0 +1,18 @@
+version: '3.0'
+services:
+  kafka0:
+    build:
+      context: .
+    image: hongchhe/kafka
+    container_name: kafka0
+    hostname: kafka-0
+    environment:
+      - BROKER_ID=0
+      - LISTENERS_PORT=9092
+      - ADVERTISED_PORT=9092
+      - ZOOKEEPER_CONNECT=localhost:2181
+    ports:
+      - 2181:2181 # zookeeper port
+      - 9092:9092 # 
+      - 9093:9093
+      - 8888:8888

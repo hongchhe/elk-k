@@ -11,7 +11,7 @@ ENV        BASE_URL=https://artifacts.elastic.co/downloads/elasticsearch/
 ENV        ES_HOME=${ES_HOME}
 
 RUN        mkdir -p ${ES_HOME} \
-        && wget  -q -O - BASE_URL/${ES_PKG_NAME}.tar.gz | tar -xzC ${ES_HOME} --strip-components=1 \
+        && wget -q -O - BASE_URL/${ES_PKG_NAME}.tar.gz | tar -xzC ${ES_HOME} --strip-components=1 \
         && groupadd -r elasticsearch \
         && useradd -r -g elasticsearch elasticsearch \
         && cp ${ES_HOME}/config/elasticsearch.yml ${ES_HOME}/config/elasticsearch.yml.bak

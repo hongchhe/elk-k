@@ -5,7 +5,7 @@ This repo contains the files for building the Apache Kafka docker image.
 
 ## NOTE
 
-**Please notice** : The `master` branch is not Working now !!!  Please make sure to checkout `standalone-0.10.1.1` branch. the `standalone-0.10.1.1` contains the latest kafka release version `kafka_2.11-0.10.1.1`
+**Please notice** : The `master` branch is not Working now !!!  Please make sure to checkout `standalone-1.0.0` branch. the `standalone-1.0.0` contains the latest kafka release version `kafka_2.11-1.0.0`
 
 
 ## The sandalone mode kafka 
@@ -27,12 +27,12 @@ docker run -p 2181:2181 -p 9092:9092 kafka
 
 #### Install the kafka client
 
-Download kafka version 0.10.1.1
+Download kafka version 1.0.0
 
 ```
-curl -O http://www-us.apache.org/dist/kafka/0.10.1.1/kafka_2.11-0.10.1.1.tgz
-tar xzvf kafka_2.11-0.10.1.1.tgz
-cd kafka_2.11-0.10.1.1
+curl -O http://www-us.apache.org/dist/kafka/1.0.0/kafka_2.11-1.0.0.tgz
+tar xzvf kafka_2.11-1.0.0.tgz
+cd kafka_2.11-1.0.0
 ```
 
 #### Test kafka
