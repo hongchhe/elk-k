@@ -1,4 +1,3 @@
-#FROM       hongchhe/ubuntu-python
 FROM       centos:7
 MAINTAINER hehongchuang@gmail.com
 
@@ -8,7 +7,7 @@ RUN        yum update -y \
         && rm -rf /var/cache/yum
 
 ENV        SCALA_VERSION 2.12
-ENV        KAFKA_VERSION 1.0.0
+ENV        KAFKA_VERSION 2.1.1
 ENV        KAFKA_HOME /opt/kafka
 ENV        REPO_BASE http://mirrors.hust.edu.cn/apache/kafka
 
